@@ -1,0 +1,64 @@
+/* Default color scheme */
+html
+{
+    background-color: black;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+}
+
+/* Navigation bar */
+.navbar
+{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: dimgray;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Dropdown Containers */
+.dropdown-block
+{
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown-block:hover
+{
+    display: block;
+}
+
+.dropdown-block a{
+    float: none;
+    color: white;
+    padding: inherit;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Dropdown Buttons */
+.dropdown-button
+{
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+/* Dropdown Content */
+.dropdown-content
+{
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px black;
+    z-index: 1;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Links -->
+<head>
+    <title>Muhd Syamim</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<!-- Header -->
+<header>
+</header>
+
+<!-- Body -->
+<body>
+    <div id="nav-placeholder"></div>
+    <script>
+        $.get("html/navbar.html", function(data){
+            $("#nav-placeholder").replaceWith(data);
+        });
+    </script> 
+
+</body>
+
+<!-- Footer -->
+<footer>
+
+</footer>
+
+</html>
