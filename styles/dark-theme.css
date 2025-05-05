@@ -1,0 +1,90 @@
+/* Colour Palette */
+:root {
+  /** Base colors */
+  --dark: #000000;
+  --light: #ffffff;
+
+  /* Primary colors */
+  --primary-a0: #0080ff;
+  --primary-a10: #4a8dff;
+  --primary-a20: #6b9aff;
+  --primary-a30: #85a8ff;
+  --primary-a40: #9cb6ff;
+  --primary-a50: #b2c4ff;
+
+  /* Surface colors */
+  --surface-a0: #121212;
+  --surface-a10: #282828;
+  --surface-a20: #3f3f3f;
+  --surface-a30: #575757;
+  --surface-a40: #717171;
+  --surface-a50: #8b8b8b;
+
+  /* Surface tones */
+  --surface-tone-a0: #233050;
+  --surface-tone-a10: #3a4462;
+  --surface-tone-a20: #505974;
+  --surface-tone-a30: #686e87;
+  --surface-tone-a40: #7f859a;
+  --surface-tone-a50: #989cad;
+}
+
+html {
+  color: var(--light);
+  background: var(--dark);
+}
+
+/* Animation */
+.star {
+  width: 8px;
+  height: 8px;
+  background: #00d1b2;
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+/* Navigation bar */
+header {
+  border-radius: 25px;
+  background: var(--surface-tone-a10);
+}
+
+header button {
+  border: none;
+  background: none;
+  color: var(--light);
+  font-family: sans-serif;
+  font-size: 22px;
+  padding: 10px;
+}
+
+/* Pages */
+#page {
+  border-radius: 20px;
+  font-family: sans-serif;
+  padding: 10px;
+  margin: 10px 0px;
+}
+
+.card {
+  border-radius: 10px;
+  background: var(--surface-tone-a10);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.thumbnail {
+  width: 200px;
+  margin: 10px;
+}
+
+a {
+  color: var(--light);
+}
+
+/* About */
+footer {
+  color: var(--light);
+}

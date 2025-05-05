@@ -1,31 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
-<!-- Links -->
 <head>
-    <title>Muhd Syamim</title>
-    <link rel="stylesheet" href="css/index.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <meta charset="utf-8">
+  <title>Muhammad Syamim</title>
+  <script src="src/htmx.min.js"></script>
+  <link rel="stylesheet" href="styles/dark-theme.css">
 </head>
 
-<!-- Header -->
-<header>
-</header>
-
-<!-- Body -->
 <body>
-    <div id="nav-placeholder"></div>
-    <script>
-        $.get("html/navbar.html", function(data){
-            $("#nav-placeholder").replaceWith(data);
-        });
-    </script> 
+  <script src="animations/starfall.js"></script>
 
+  <header hx-target="#page">
+    <button hx-get="pages/home.html">Home</button>
+    <button hx-get="pages/project.html">Projects</button>
+    <button hx-get="pages/research.html">Research</button>
+  </header>
+
+
+  <div id="page" hx-trigger="load" hx-get="pages/home.html"></div>
+
+  <footer>
+    Built with HTMX
+  </footer>
 </body>
-
-<!-- Footer -->
-<footer>
-
-</footer>
 
 </html>
