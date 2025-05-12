@@ -10,19 +10,21 @@
 </head>
 
 <body>
-  <header hx-target="#page">
+  <header class="navbar" hx-target="#page">
     <button hx-get="pages/home.html">Home</button>
     <button hx-get="pages/project.html">Projects</button>
     <button hx-get="pages/research.html">Research</button>
-    <button id="toggleAnimationButton" hx-on:click="toggleStarfall()" style="margin-left: auto;">
-      <img src=" res/falling-star-icon.svg" style="transform: scaleX(-1);">
+    <button hx-on:click="toggleStarfall()" style="margin-left: auto;">
+      <div id="starfall-icon" style="mask: url(res/falling-star-icon.svg);"></div>
+      <div class="tooltip-text">Toggle starfall</div>
     </button>
   </header>
 
   <div id="page" hx-trigger="load" hx-get="pages/home.html"></div>
 
   <footer>
-    Built with HTMX
+    Built with HTMX. Source code accessible <a class="code-source"
+      href="https://github.com/VOCOM/Landing-Page">here</a>.
   </footer>
 </body>
 

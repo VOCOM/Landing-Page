@@ -64,7 +64,7 @@ body {
 }
 
 /* Navigation bar */
-header {
+.navbar {
   background: var(--surface-tone-a20);
   display: flex;
   position: fixed;
@@ -73,7 +73,7 @@ header {
   width: calc(100% - 2*var(--navbar-padding));
 }
 
-header button {
+.navbar button {
   border: none;
   background: none;
   color: var(--light);
@@ -83,6 +83,31 @@ header button {
   padding: 0px;
   margin: 0px 5px;
   min-width: var(--navbar-button-min-width);
+  height: var(--navbar-height);
+}
+
+#starfall-icon {
+  aspect-ratio: calc(143/150);
+  height: 50px;
+  mask-repeat: no-repeat;
+  background-color: lime;
+  transform: scaleX(-1);
+  justify-self: right;
+}
+
+.tooltip-text {
+  margin-top: 10px;
+  font-size: 16px;
+  background-color: gray;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.navbar button:hover .tooltip-text {
+  visibility: visible;
 }
 
 /* Navigatable Page Body */

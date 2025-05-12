@@ -1,10 +1,10 @@
 const travel = 20;
 const maxStars = 20;
 
-const green = "invert(42%) sepia(93%) saturate(1352%) hue-rotate(87deg) brightness(119%) contrast(119%)";
-const black = "";
-const toggleButton = document.getElementById("toggleAnimationButton");
-toggleButton.style.filter = green;
+const lime = "lime";
+const black = "black";
+const toggleButton = document.getElementById("starfall-icon");
+toggleButton.style.backgroundColor = lime;
 
 const starfall = document.createElement("div");
 starfall.setAttribute("id", "starfall");
@@ -44,9 +44,9 @@ function createFallingStar() {
 function toggleStarfall() {
   if (starfall.style.visibility === "hidden") {
     starfall.style.visibility = "visible";
-    toggleButton.style.filter = green;
+    toggleButton.style.backgroundColor = lime;
   } else {
     starfall.style.visibility = "hidden";
-    toggleButton.style.filter = black;
+    toggleButton.style.backgroundColor = black;
   }
 }
