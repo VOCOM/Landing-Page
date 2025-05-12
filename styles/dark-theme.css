@@ -1,4 +1,3 @@
-/* Colour Palette */
 :root {
   /** Base colors */
   --dark: #000000;
@@ -27,11 +26,21 @@
   --surface-tone-a30: #686e87;
   --surface-tone-a40: #7f859a;
   --surface-tone-a50: #989cad;
-}
 
-html {
-  color: var(--light);
-  background: var(--dark);
+  /* Body */
+  --body-margin: 0px;
+
+  /* Navbar */
+  --navbar-button-font-size: 22px;
+  --navbar-button-margin: 10px;
+  --navbar-button-min-width: 50px;
+  --navbar-height: 50px;
+  --navbar-padding: 5px;
+
+  /* Project-Card */
+  --project-card-border-radius: 10px;
+  --project-card-margin: 10px;
+  --project-card-padding: 10px;
 }
 
 /* Animation */
@@ -45,10 +54,23 @@ html {
   z-index: -1;
 }
 
+html {
+  color: var(--light);
+  background: var(--dark);
+}
+
+body {
+  margin: var(--body-margin);
+}
+
 /* Navigation bar */
 header {
-  border-radius: 10px;
-  background: var(--surface-tone-a10);
+  background: var(--surface-tone-a20);
+  display: flex;
+  position: fixed;
+  padding: var(--navbar-padding);
+  height: var(--navbar-height);
+  width: calc(100% - 2*var(--navbar-padding));
 }
 
 header button {
@@ -56,30 +78,44 @@ header button {
   background: none;
   color: var(--light);
   font-family: sans-serif;
-  font-size: 22px;
-  padding: 10px;
+  font-size: var(--navbar-button-font-size);
+  cursor: pointer;
+  padding: 0px;
+  margin: 0px 5px;
+  min-width: var(--navbar-button-min-width);
 }
 
-/* Pages */
+/* Navigatable Page Body */
 #page {
-  border-radius: 20px;
   font-family: sans-serif;
-  margin: 10px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: calc(var(--navbar-height) + 2*var(--navbar-padding));
+  justify-content: left;
 }
 
-.card {
-  border-radius: 10px;
+/* Projects */
+.project-card {
+  border-radius: var(--project-card-border-radius);
   background: var(--surface-tone-a10);
-  padding: 10px;
-  margin-bottom: 10px;
+  cursor: pointer;
+  padding: var(--project-card-padding);
+  margin: var(--project-card-margin);
+  min-width: 400px;
+  width: calc(25% - 2*var(--project-card-margin) - 2*var(--project-card-padding));
 }
 
-.thumbnail {
-  width: 200px;
-  margin: 10px;
+.project-card h1 {
+  height: 2em;
+  font-size: 20px;
+  font-weight: bold;
 }
 
-a {
+.project-card img {
+  width: 100%;
+}
+
+.code-source {
   color: var(--light);
 }
 

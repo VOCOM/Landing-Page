@@ -1,6 +1,11 @@
 const travel = 20;
 const maxStars = 20;
 
+const green = "invert(42%) sepia(93%) saturate(1352%) hue-rotate(87deg) brightness(119%) contrast(119%)";
+const black = "";
+const toggleButton = document.getElementById("toggleAnimationButton");
+toggleButton.style.filter = green;
+
 const starfall = document.createElement("div");
 starfall.setAttribute("id", "starfall");
 document.body.insertAdjacentElement("afterbegin", starfall);
@@ -34,4 +39,14 @@ function createFallingStar() {
     iterations: Infinity
   });
   starfall.insertAdjacentElement("afterbegin", star);
+}
+
+function toggleStarfall() {
+  if (starfall.style.visibility === "hidden") {
+    starfall.style.visibility = "visible";
+    toggleButton.style.filter = green;
+  } else {
+    starfall.style.visibility = "hidden";
+    toggleButton.style.filter = black;
+  }
 }

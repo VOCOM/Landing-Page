@@ -5,18 +5,19 @@
   <meta charset="utf-8">
   <title>Muhammad Syamim</title>
   <script src="src/htmx.min.js"></script>
+  <script defer src="animations/starfall.js"></script>
   <link rel="stylesheet" href="styles/dark-theme.css">
 </head>
 
 <body>
-  <script src="animations/starfall.js"></script>
-
   <header hx-target="#page">
     <button hx-get="pages/home.html">Home</button>
     <button hx-get="pages/project.html">Projects</button>
     <button hx-get="pages/research.html">Research</button>
+    <button id="toggleAnimationButton" hx-on:click="toggleStarfall()" style="margin-left: auto;">
+      <img src=" res/falling-star-icon.svg" style="transform: scaleX(-1);">
+    </button>
   </header>
-
 
   <div id="page" hx-trigger="load" hx-get="pages/home.html"></div>
 
