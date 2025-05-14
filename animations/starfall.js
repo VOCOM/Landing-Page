@@ -17,6 +17,7 @@ for (i = 0; i < maxStars; i++) {
 
 function createFallingStar() {
   var x = Math.floor(Math.random() * 100);
+  const salt = Math.min(0.5, Math.random());
   if (x > 90 - travel) x -= travel;
 
   const star = document.createElement("div");
@@ -28,7 +29,9 @@ function createFallingStar() {
       transform: 'translateX(' + x + 'vw) translateY(0vh)'
     },
     { opacity: 1.0 },
-    { opacity: 0.5 },
+    { opacity: 0.2 },
+    { opacity: 0.2 },
+    { opacity: salt },
     { opacity: 0.1 },
     {
       opacity: 0,

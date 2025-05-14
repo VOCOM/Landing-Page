@@ -14,17 +14,17 @@
     <button hx-get="pages/home.html">Home</button>
     <button hx-get="pages/project.html">Projects</button>
     <button hx-get="pages/research.html">Research</button>
-    <button hx-on:click="toggleStarfall()" style="margin-left: auto;">
-      <div id="starfall-icon" style="mask: url(res/falling-star-icon.svg);"></div>
+    <div class="tooltip" style="margin-left: auto;">
+      <button id="starfall-icon" hx-on:click="toggleStarfall()"></button>
       <div class="tooltip-text">Toggle starfall</div>
-    </button>
+    </div>
   </header>
 
   <div id="page" hx-trigger="load" hx-get="pages/home.html"></div>
 
   <footer>
-    Built with HTMX. Source code accessible <a class="code-source"
-      href="https://github.com/VOCOM/Landing-Page">here</a>.
+    Built with HTMX. Source code accessible
+    <a class="code-source" href="https://github.com/VOCOM/Landing-Page">here</a>.
   </footer>
 </body>
 

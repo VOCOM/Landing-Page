@@ -1,3 +1,4 @@
+/* Globals */
 :root {
   /** Base colors */
   --dark: #000000;
@@ -38,12 +39,21 @@
   --navbar-padding: 5px;
 
   /* Project-Card */
+  --project-container-gap: 10px;
   --project-card-border-radius: 10px;
-  --project-card-margin: 10px;
   --project-card-padding: 10px;
 }
 
-/* Animation */
+html {
+  color: var(--light);
+  background: var(--dark);
+}
+
+body {
+  margin: var(--body-margin);
+}
+
+/* Background Animation */
 .star {
   width: 8px;
   height: 8px;
@@ -54,13 +64,41 @@
   z-index: -1;
 }
 
-html {
-  color: var(--light);
-  background: var(--dark);
+/* Tooltip Containers */
+.tooltip {
+  display: flex;
+  flex-direction: column;
 }
 
-body {
-  margin: var(--body-margin);
+.tooltip-text {
+  color: var(--light);
+  background-color: var(--surface-tone-a40);
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 5px;
+  visibility: hidden;
+  opacity: 0;
+  cursor: default;
+  user-select: none;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  animation-name: fadeIn;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: 700ms;
+  animation-duration: 100ms;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Navigation bar */
@@ -87,56 +125,45 @@ body {
 }
 
 #starfall-icon {
-  aspect-ratio: calc(143/150);
-  height: 50px;
-  mask-repeat: no-repeat;
   background-color: lime;
   transform: scaleX(-1);
-  justify-self: right;
-}
-
-.tooltip-text {
-  margin-top: 10px;
-  font-size: 16px;
-  background-color: gray;
-  border-radius: 5px;
-  padding: 5px;
-  text-align: center;
-  visibility: hidden;
-  z-index: 1;
-}
-
-.navbar button:hover .tooltip-text {
-  visibility: visible;
+  mask: url(../res/falling-star-icon.svg);
+  mask-repeat: no-repeat;
+  aspect-ratio: calc(143/150);
 }
 
 /* Navigatable Page Body */
 #page {
   font-family: sans-serif;
-  display: flex;
-  flex-wrap: wrap;
   padding-top: calc(var(--navbar-height) + 2*var(--navbar-padding));
-  justify-content: left;
 }
 
 /* Projects */
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--project-container-gap);
+  margin-top: 10px;
+}
+
 .project-card {
   border-radius: var(--project-card-border-radius);
   background: var(--surface-tone-a10);
   cursor: pointer;
   padding: var(--project-card-padding);
-  margin: var(--project-card-margin);
   min-width: 400px;
-  width: calc(25% - 2*var(--project-card-margin) - 2*var(--project-card-padding));
+  width: calc(25% - 3*var(--project-container-gap));
 }
 
-.project-card h1 {
-  height: 2em;
-  font-size: 20px;
+.project-card .title {
+  height: 3em;
+  font-size: 25px;
   font-weight: bold;
+  line-height: 1.5em;
 }
 
-.project-card img {
+.project-card .thumbnail {
   width: 100%;
 }
 
